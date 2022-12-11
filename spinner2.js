@@ -1,18 +1,14 @@
 //creates a low-fidelity loading spinner
 
 const displaySpinner = function() {
-const spinner = ['|', '/', '-', '\\', '|', '/', '-', '\\', '|'];
+const spinner = '|/-\|/-\|';
 let delay = 100;
-for (const line of spinner) {
+for (const line of (spinner + '\n')) {
   setTimeout(() => {
-    process.stdout.write(`\r${line}   `);
+    process.stdout.write(line === '\n' ? line : `\r${line}   `);
   }, delay);
   delay += 200;
 }
-
-setTimeout(() => {
-  process.stdout.write('\n');
-}, delay);
 };
 
 displaySpinner();
