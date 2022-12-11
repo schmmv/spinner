@@ -1,4 +1,6 @@
 //creates a low-fidelity loading spinner
+
+const displaySpinner = function() {
 const spinner = ['|', '/', '-', '\\', '|', '/', '-', '\\', '|'];
 let delay = 100;
 for (const line of spinner) {
@@ -11,5 +13,7 @@ for (const line of spinner) {
 setTimeout(() => {
   process.stdout.write('\n');
 }, delay);
+};
 
+displaySpinner();
 
